@@ -4,49 +4,59 @@
 
 Implemente as seguintes classes:  
 
-*Classe: Apolice*  
+*Classe: Imovel*  
 | ---------------------------------- |
-(-) numero : int
-(-) nome : String
-(-) idade : int
-(-) sexo : char
-(-) valorAutomovel : double
-(+) Apolice()
-(+) Apolice(numero : int, nome : String, idade : int, sexo : char, valorAutomovel : double)
-(+) calcularValor():double
-(+) imprimir() : String
+(-) codigo : int
+(-) endereco : String
+(-) valor : double
+(+) Imovel()
+(+) Imovel(codigo : int, endereço : String, valor : double)
 (+) gets...
 (+) sets...
+(+) toString():String
+(+) calcularValorImovel():double
+
+
+*Classe: ImovelVelho*  
+| ---------------------------------- |
+(-) valorDesconto : double
+(+) ImovelVelho()
+(+) ImovelVelho(codigo : int, endereço : String, valor : double, valorDesconto : double)
+(+) gets...
+(+) sets...
+(+) calcularValorImovel():double
+(+) toString():String
+
+
+*Classe: ImovelNovo*  
+| ---------------------------------- |
+(-) valorAdicional : double
+(+) ImovelNovo()
+(+) ImovelNovo(codigo : int, endereço : String, valor : double, valorAdicional : double)
+(+) gets...
+(+) sets...
+(+) calcularValorImovel():double
+(+) toString():String
 
 
 # Observações:
-- calcularValor():double
-- se( sexo == ‘M’ e idade <= 25)
-- retornar valorAutomovel * 10 / 100
-- se (sexo == ‘M’ e idade > 25)
-- retornar valorAutomovel * 5/100
-- se(sexo == ‘F’)
-- retornar valorAutomovel * 2/100
-
+- O método toString deverá retornar uma String com todas as informações concatenadas, não esqueça de mostrar o valor do imóvel.  
+- Um ArrayList deverá ser criado na classe Main para armazenar os imóveis.  
 
 # Retornar:
-- Imprimir():String
-- Retornar:
-- Número: xxx
-- Nome: xxxx
-- Idade: xx
-- Sexo : x
-- Valor Automóvel: xxxxx
-- Valor Apolice: xxxxx
+- O método calcularValorImovel deverá:  
+- Imóvel: retornar o valor do imóvel;  
+- Imóvel Novo: adicionar ao valor do imóvel o valor adicional;  
+- Imóvel Velho: subtrair do valor do imóvel o valor do desconto;  
 
 
 # Menu  
-1- Criar Apólice  
-2- Ver Dados Apólice  
+1- Inserir imóvel (perguntar se é novo ou velho)  
+2- Exibir Imóveis  
 3- Sair  
 
 --------------------------------------------------------------------------
-(NetBeans IDE - Exercicio 1 - Lista 2 - Aula 6 - Matéria: Programação Orientada a Objeto Java - Segundo Semestre ADS - Professor Rafael F. M. Moreno)  
+(NetBeans IDE - Aula 8 - Matéria: Programação Orientada a Objeto Java - Segundo Semestre ADS - Professor Rafael F. M. Moreno)  
 
 
-Última atualização: 17h02 - 17/09/2023.
+Última atualização: 00h47 - 03/10/2023.
