@@ -18,18 +18,32 @@ public class Ex1lista4_AC2 {
             
             switch (opc){
                 case 1: // VERIFICAR TODOS ABAIXO
-                    opc = Integer.parseInt(JOptionPane.showInputDialog("Tipo:\n" + "1 - Graduação" + "2 - Pós Graduação"));
-                    ra = JOptionPane.showInputDialog("RA");
-                    nome = JOptionPane.showInputDialog("Nome");
-                    curso = JOptionPane.showInputDialog("Curso");
-                    listaPessoa.add(new PessoaFisica(nomeRazao, cpfCnpj, email, celular));
+                    opc = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Tipo:" + "\n" + 
+                            "1 - Graduação" + "\n" + 
+                            "2 - Pós Graduação"));
+                    ra = JOptionPane.showInputDialog("RA:");
+                    nome = JOptionPane.showInputDialog("Nome:");
+                    curso = JOptionPane.showInputDialog("Curso:");
                     if(opc == 1){
-                        anoConclusao = JOptionPane.showInputDialog("Curso");
+                        anoConclusao = JOptionPane.showInputDialog("Ano de conclusão do Ensino Médio:");
+                        listaAluno.add(new AlunoGraduacao(anoConclusao, ra, nome, curso));
                     } else{
-                        anoConclusao = JOptionPane.showInputDialog("Curso");
+                        anoConclusao = JOptionPane.showInputDialog("Ano de conclusão da Graduação:");
+                        listaAluno.add(new AlunoPosGraduacao(anoConclusao, ra, nome, curso));
                     }
+                    
                     break;
                 case 2:
+                    String msg = "";
+                    for(Aluno p : listaAluno){
+                        if(p instanceof AlunoGraduacao){
+                            msg += ((AlunoGraduacao) p).toString() + "\n-----------\n";
+                        } else{
+                        msg += ((AlunoPosGraduacao) p).toString() + "\n------------\n";
+                        }
+                    }
+                    JOptionPane.showMessageDialog(null, msg);
                     break;
                 case 3:
                     break;

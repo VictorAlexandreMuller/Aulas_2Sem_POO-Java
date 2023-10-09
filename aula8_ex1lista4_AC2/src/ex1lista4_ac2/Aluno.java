@@ -14,11 +14,6 @@ public class Aluno {
         this.curso = curso;
     }
 
-    @Override
-    public String toString() {
-        return "Aluno{" + "ra=" + ra + ", nome=" + nome + ", curso=" + curso + '}';
-    }
-
     public String getRa() {
         return ra;
     }
@@ -43,6 +38,11 @@ public class Aluno {
         this.curso = curso;
     }
     
-    
+    @Override
+    public String toString() {
+        return "RA: " + ra + 
+                "Nome: " + nome + 
+                "Curso: " + curso;
+    }    
     
 }

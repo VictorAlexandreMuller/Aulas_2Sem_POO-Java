@@ -11,11 +11,6 @@ public class AlunoGraduacao extends Aluno {
         this.anoConclusaoEnsinoMedio = anoConclusaoEnsinoMedio;
     }
 
-    @Override
-    public String toString() {
-        return "AlunoGraduacao{" + "anoConclusaoEnsinoMedio=" + anoConclusaoEnsinoMedio + '}';
-    }
-
     public String getAnoConclusaoEnsinoMedio() {
         return anoConclusaoEnsinoMedio;
     }
@@ -24,5 +19,13 @@ public class AlunoGraduacao extends Aluno {
         this.anoConclusaoEnsinoMedio = anoConclusaoEnsinoMedio;
     }
     
+    @Override
+    public String toString() {
+        return "Aluno de Graduação: " + "\n" +
+                "\nRA: " + getRa() + 
+                "\nNome: " + getNome() +
+                "\nCurso: " + getCurso() +
+                "\nConcluiu o Ensino Médio em: " + anoConclusaoEnsinoMedio;
+    }
     
 }
