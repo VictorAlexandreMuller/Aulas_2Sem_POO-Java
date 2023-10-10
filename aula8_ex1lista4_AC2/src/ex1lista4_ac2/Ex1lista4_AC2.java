@@ -9,38 +9,38 @@ public class Ex1lista4_AC2 {
         ArrayList<Aluno> listaAluno = new ArrayList<>();
         int opc = 0;
         String ra, nome, curso, anoConclusao;
-        
-        while(opc != 3){
+
+        while (opc != 3) {
             opc = Integer.parseInt(JOptionPane.showInputDialog(
-                    "1 - Inserir Aluno\n" +
-                    "2 - Exibir Alunos\n" +
-                    "3 - Sair"));
-            
-            switch (opc){
-                case 1: // VERIFICAR TODOS ABAIXO
+                    "1 - Inserir Aluno\n"
+                    + "2 - Exibir Alunos\n"
+                    + "3 - Sair"));
+
+            switch (opc) {
+                case 1:
                     opc = Integer.parseInt(JOptionPane.showInputDialog(
-                            "Tipo:" + "\n" + 
-                            "1 - Graduação" + "\n" + 
-                            "2 - Pós Graduação"));
+                            "Tipo:" + "\n"
+                            + "1 - Graduação" + "\n"
+                            + "2 - Pós Graduação"));
                     ra = JOptionPane.showInputDialog("RA:");
                     nome = JOptionPane.showInputDialog("Nome:");
                     curso = JOptionPane.showInputDialog("Curso:");
-                    if(opc == 1){
+                    if (opc == 1) {
                         anoConclusao = JOptionPane.showInputDialog("Ano de conclusão do Ensino Médio:");
                         listaAluno.add(new AlunoGraduacao(anoConclusao, ra, nome, curso));
-                    } else{
+                    } else {
                         anoConclusao = JOptionPane.showInputDialog("Ano de conclusão da Graduação:");
                         listaAluno.add(new AlunoPosGraduacao(anoConclusao, ra, nome, curso));
                     }
-                    
+
                     break;
                 case 2:
                     String msg = "";
-                    for(Aluno p : listaAluno){
-                        if(p instanceof AlunoGraduacao){
-                            msg += ((AlunoGraduacao) p).toString() + "\n-----------\n";
-                        } else{
-                        msg += ((AlunoPosGraduacao) p).toString() + "\n------------\n";
+                    for (Aluno p : listaAluno) {
+                        if (p instanceof AlunoGraduacao) {
+                            msg += p.toString() + "\n--------------------------------\n";
+                        } else {
+                            msg += p.toString() + "\n--------------------------------\n";
                         }
                     }
                     JOptionPane.showMessageDialog(null, msg);
@@ -51,7 +51,7 @@ public class Ex1lista4_AC2 {
                     JOptionPane.showMessageDialog(null, "Opção inválida.");
             }
         }
-        
+
     }
-    
+
 }
