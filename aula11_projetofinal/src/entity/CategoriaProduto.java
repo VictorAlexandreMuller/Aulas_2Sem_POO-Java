@@ -2,6 +2,7 @@ package entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +17,8 @@ public class CategoriaProduto implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String descricao;
-    @OneToMany(mappedBy = "categoria_produto_id")
-    ArrayList<Produto> produtos;
+    @OneToMany(mappedBy = "categoriaProduto")
+    private List<Produto> produtos;
     
     public Integer getId() {
         return id;
@@ -60,14 +61,14 @@ public class CategoriaProduto implements Serializable {
         this.descricao = descricao;
     }
 
-    public ArrayList<Produto> getProdutos() {
+    public List<Produto> getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(ArrayList<Produto> produtos) {
+    public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
     }
-    
-    
+
+
     
 }
