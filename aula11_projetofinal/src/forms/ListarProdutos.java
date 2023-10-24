@@ -1,4 +1,4 @@
-package Forms;
+package forms;
 
 public class ListarProdutos extends javax.swing.JInternalFrame {
 

@@ -1,4 +1,4 @@
-package Forms;
+package forms;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
@@ -33,10 +33,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
 
-        jToolBar1.setBackground(new java.awt.Color(0, 102, 102));
+        jToolBar1.setBackground(new java.awt.Color(153, 204, 255));
         jToolBar1.setRollover(true);
 
-        jDesktopPane2.setBackground(new java.awt.Color(153, 153, 153));
+        jDesktopPane2.setBackground(new java.awt.Color(153, 153, 255));
 
         javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
         jDesktopPane2.setLayout(jDesktopPane2Layout);
@@ -64,10 +64,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jDesktopPane2))
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 153, 0));
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jMenu1.setBackground(new java.awt.Color(0, 153, 0));
-        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu1.setForeground(new java.awt.Color(0, 0, 0));
         jMenu1.setText("Arquivo");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
@@ -85,8 +85,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setBackground(new java.awt.Color(0, 153, 0));
-        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu2.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu2.setForeground(new java.awt.Color(0, 0, 0));
         jMenu2.setText("Cadastros");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
@@ -108,8 +108,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setBackground(new java.awt.Color(0, 153, 0));
-        jMenu3.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu3.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu3.setForeground(new java.awt.Color(0, 0, 0));
         jMenu3.setText("Relatórios");
         jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
@@ -118,8 +118,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setBackground(new java.awt.Color(0, 153, 0));
-        jMenu4.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu4.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu4.setForeground(new java.awt.Color(0, 0, 0));
         jMenu4.setText("Sobre");
         jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
