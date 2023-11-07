@@ -24,9 +24,9 @@ public class CadastrarCategoria extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Descrição:");
+        jLabel1.setText("Descrição da Categoria:");
 
-        jButton1.setText("Cadastrar");
+        jButton1.setText("Cadastrar Categoria");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -43,10 +43,10 @@ public class CadastrarCategoria extends javax.swing.JDialog {
                     .addComponent(txtDESCRICAO)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 98, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 164, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -56,9 +56,9 @@ public class CadastrarCategoria extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(txtDESCRICAO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
@@ -72,7 +72,7 @@ public class CadastrarCategoria extends javax.swing.JDialog {
         categ.setId(0);
         
         categoriaDAO.inserir(categ);
-        JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
+        JOptionPane.showMessageDialog(this, "Categoria salva com sucesso!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

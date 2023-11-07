@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "CategoriaProduto.findAll", query = "SELECT c FROM CategoriaProduto c"),
-    @NamedQuery(name = "CategoriaProduto.findByColunm", query = "SELECT c FROM CategoriaProduto c WHERE c.id = :codigo")
+    @NamedQuery(name = "CategoriaProduto.findByCodigo", query = "SELECT c FROM CategoriaProduto c WHERE c.id = :codigo")
 })
 
 public class CategoriaProduto implements Serializable {

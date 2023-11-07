@@ -19,7 +19,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
-        ImageIcon icon = new ImageIcon("src/img/wallpaper.jpg");
+        ImageIcon icon = new ImageIcon("src/img/2825710.gif");
         Image image = icon.getImage();
         jDesktopPane2 = new javax.swing.JDesktopPane()
         {public void paintComponent(Graphics g){
@@ -43,6 +43,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jToolBar1.setBackground(new java.awt.Color(102, 102, 102));
         jToolBar1.setRollover(true);

@@ -8,8 +8,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "Produto.findAll", query = "SELECT c FROM Produto c"),
+    @NamedQuery(name = "Produto.findByCodigo", query = "SELECT c FROM Produto c WHERE c.id = :codigo")
+})
+
 public class Produto implements Serializable {
 
     private static final long serialVersionUID = 1L;

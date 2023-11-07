@@ -21,8 +21,6 @@ public class ListarCategoria extends javax.swing.JInternalFrame {
         initComponents();
     }
     
-    
-
     public static ListarCategoria getInstance() {
         if (myInstance == null) {
             myInstance = new ListarCategoria();
@@ -39,11 +37,12 @@ public class ListarCategoria extends javax.swing.JInternalFrame {
         
         try{
             List<CategoriaProduto>lista = new CategoriaProdutoDAO().selecionarTodos();
-            TableModel model = TableModelCreator.createTableModel(CategoriaProduto.class, lista, colunasVisiveis);
+            TableModel model = TableModelCreator.createTableModel
+                (CategoriaProduto.class, lista, colunasVisiveis);
             jTable1.setModel(model);
-        } catch(Exception e){
-        System.err.println(e.getMessage());
-    }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
     
     
@@ -62,7 +61,6 @@ public class ListarCategoria extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setResizable(true);
         setTitle(" Listar Categorias");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
@@ -171,38 +169,23 @@ public class ListarCategoria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        
-        jTable1.addMouseListener(new MouseAdapter() {
-            
-            int previousClickCount = 0;
-            
-            public void mouseClicked(MouseEvent e) {
-                
-                if (e.getClickCount() == 1 && e.getClickCount() != previousClickCount) {
-                    JTable source = (JTable) evt.getSource();
-                    int row = source.rowAtPoint(evt.getPoint());
-                    int column = jTable1.convertColumnIndexToView(jTable1.getColumn("Id ").getModelIndex());
-                    idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
-                    btnEDITAR.setEnabled(true);
-                    btnEXCLUIR.setEnabled(true);
-                    
-                } else if (e.getClickCount() == 2){
-                    JTable source = (JTable) e.getSource();
-                    int row = source.getSelectedRow();
-                    int column = jTable1.convertColumnIndexToView(jTable1.getColumn("Id ").getModelIndex());
-                    String s = source.getModel().getValueAt(row, column) + "";
-                    JOptionPane.showMessageDialog(null, s);
-                    
-                }
-            }
-        });
 
+        JTable source = (JTable) evt.getSource();
+        int row = source.rowAtPoint(evt.getPoint());
+        int column = jTable1.convertColumnIndexToView(jTable1.getColumn("Id ").getModelIndex());
+        idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
+        btnEDITAR.setEnabled(true);
+        btnEXCLUIR.setEnabled(true);
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btnEXCLUIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEXCLUIRActionPerformed
         // TODO add your handling code here:
         
-        if(JOptionPane.showConfirmDialog(this, "Confirma a exclusão?", "Atenção", JOptionPane.QUESTION_MESSAGE, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+        if(
+                JOptionPane.showConfirmDialog(
+                        this, "Confirma a exclusão?", "Atenção",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
             CategoriaProdutoDAO cDAO = new CategoriaProdutoDAO();
             CategoriaProduto c = cDAO.selecionarPorCodigo(idSelecionado);
             cDAO.excluir(c);
