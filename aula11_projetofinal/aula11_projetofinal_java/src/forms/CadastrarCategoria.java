@@ -7,11 +7,14 @@ import javax.swing.JOptionPane;
 public class CadastrarCategoria extends javax.swing.JDialog {
 
     private CategoriaProdutoDAO categoriaDAO;
+    private int idSelecionado;
+    private CategoriaProduto categoriaSelecionada;
     
-    public CadastrarCategoria(java.awt.Frame parent, boolean modal) {
+    public CadastrarCategoria(java.awt.Frame parent, boolean modal, int idSelecionado) {
         super(parent, modal);
         initComponents();
         categoriaDAO = new CategoriaProdutoDAO();
+        this.idSelecionado = idSelecionado;
     }
 
     @SuppressWarnings("unchecked")
@@ -23,6 +26,11 @@ public class CadastrarCategoria extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jLabel1.setText("Descrição da Categoria:");
 
@@ -66,6 +74,8 @@ public class CadastrarCategoria extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        if(idSelecionado == 0){
         categoriaDAO = new CategoriaProdutoDAO();
         CategoriaProduto categ = new CategoriaProduto();
         categ.setDescricao(txtDESCRICAO.getText());
@@ -73,7 +83,22 @@ public class CadastrarCategoria extends javax.swing.JDialog {
         
         categoriaDAO.inserir(categ);
         JOptionPane.showMessageDialog(this, "Categoria salva com sucesso!");
+        } else {
+            categoriaSelecionada.setDescricao(txtDESCRICAO.getText());
+            categoriaDAO.editar(categoriaSelecionada);
+        }
+        JOptionPane.showMessageDialog(this, "Salvo com sucesso.");
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    
+    // Retorna preenchido com o objeto referente ao ID selecionado
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        if(idSelecionado > 0){
+            categoriaSelecionada = categoriaDAO.selecionarPorCodigo(idSelecionado);
+            txtDESCRICAO.setText(categoriaSelecionada.getDescricao());
+        }
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -105,7 +130,7 @@ public class CadastrarCategoria extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastrarCategoria dialog = new CadastrarCategoria(new javax.swing.JFrame(), true);
+                CadastrarCategoria dialog = new CadastrarCategoria(new javax.swing.JFrame(), true, 0);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
